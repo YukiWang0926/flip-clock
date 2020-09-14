@@ -1,32 +1,31 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <flip-clock />
   </div>
 </template>
-
+<script>
+import FlipClock from "@/components/flip-clock";
+export default {
+  components: {
+    FlipClock,
+  },
+};
+</script>
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font: normal 12px "Helvetica Neue", Helvetica, sans-serif;
+  user-select: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  background: radial-gradient(ellipse at center, #969696 0%, #595959 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 </style>
